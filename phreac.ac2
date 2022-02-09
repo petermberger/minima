@@ -1,0 +1,14 @@
+# Scenario 3
+# Act2 script for creating a Fe-S phase diagram
+# used to create figure 3
+
+data = thermo.tdat verify
+diagram Fe++
+activity main = 1e-5
+swap e- for O2(aq)
+diagram x = Eh
+diagram y = pH
+activity SO4-- = 5.6e-5
+x-axis from -.75 to 1.25 increment .5
+y-axis from 0 to 14 increment 2
+trace React_plot.gtp

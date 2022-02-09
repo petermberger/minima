@@ -1,0 +1,19 @@
+# Scenario 2
+# React script demonstrating the effects of mineral equilibrium on
+# the optimization of a geochemical model
+# model output was extracted using Gtplot
+
+data = thermo.tdat verify
+conductivity = conductivity-USGS.dat
+temperature = 25 C
+H2O          = 1 free kg
+pH           = 3
+SO4--        = .001 mg/l
+swap O2(g) for O2(aq)
+O2(g)        = .2 fugacity
+Na+          = 20 mmol/kg
+Cl-          = 20 mmol/kg
+balance on Cl-
+swap Hematite for Fe++
+Hematite     = .1 free g
+react .1 g of Pyrite

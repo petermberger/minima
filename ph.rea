@@ -1,0 +1,17 @@
+# Scenario 3
+# React script used to demonstrate the the effect
+# of no minerals on the optimization of a geochemical model
+
+data = thermo.tdat verify
+conductivity = conductivity-USGS.dat
+temperature = 25 C
+H2O          = 1 free kg
+pH           = 4
+swap e- for O2(aq)
+Eh           = .2 V
+Na+          = 20 mmol/kg
+Cl-          = 20 mmol/kg
+balance on Cl-
+Fe++         = 1 mg/kg
+SO4--        = 10 mg/l
+slide pH to 7.5

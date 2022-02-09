@@ -1,0 +1,27 @@
+# Scenario 1
+# X1t script script used to demonstrate the the effect
+# of measuring error only one dimension
+
+data = thermo.tdat verify
+conductivity = conductivity-USGS.dat
+interval start at 0 day, fluid = fluid_1
+time end at 1 day
+length = 10 cm
+width = 2 cm
+height = 2 cm
+Nx = 100
+discharge start = 3 pore_volumes
+dispersivity = 1e-5 cm
+scope = initial
+   H2O          = 1 free kg
+   Na+          = 10 mg/kg
+   balance on Cl-
+   Br-          = 1 mg/kg
+scope = fluid_1
+   H2O          = 1 free kg
+   Na+          = 500 mg/kg
+   balance on Cl-
+   Br-          = 50 mg/kg
+scope
+
+dxplot = .01 exact linear
